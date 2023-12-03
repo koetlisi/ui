@@ -1,0 +1,215 @@
+{% load static %}
+<div class="sidebar">
+    <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+        <div class="image">
+            <img src="{% static 'assets/dist/img/AdminLTELogo.png' %}" class="img-circle elevation-2" alt="User Image">
+        </div>
+        <div class="info">
+            <a href="#" class="d-block">{{ name }} {{ surname }}</a>
+        </div>
+    </div>
+    <div class="form-inline">
+        <div class="input-group" data-widget="sidebar-search">
+            <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
+            <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                    <i class="fas fa-search fa-fw"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <nav class="mt-2">
+        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+            <li class="nav-item ">
+                <a href="/dashboard/" class="nav-link active">
+                    <i class="nav-icon fas fa-tachometer-alt"></i>
+                    <p>
+                        Dashboard
+                        <i class="right fas fa-angle-left"></i>
+                    </p>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        User
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Roles & Permissions
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Samples
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/register-sample/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p>Register Sample</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Preparation Methods
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/sample_prep_methods/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p> Add Sample Preparation Method</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Analytes
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/analytes_register/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p> Add Analytes</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Analysis
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/analyses_methods/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p> Add Analyses Method</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Reagents
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">2</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/primary_reagent/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p> Add Primary Reagent</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/secondary_reagents/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p> Add Secondary Reagent</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/crms_reagents/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p> Add CRM</p>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="far fa-eye nav-icon"></i>
+                            <p>view Reagents</p>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Labs & Offices
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">3</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Equipment
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">3</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a href="#" class="nav-link">
+                    <i class="nav-icon fas fa-folder-open"></i>
+                    <p>
+                        Balance
+                        <i class="fas fa-angle-left right"></i>
+                        <span class="badge badge-info right">3</span>
+                    </p>
+                </a>
+                <ul class="nav nav-treeview">
+                    <li class="nav-item">
+                        <a href="/Balance Calibration/" class="nav-link">
+                            <i class="far fa-address-book nav-icon"></i>
+                            <p>Register Sample</p>
+                        </a>
+                    </li>
+                </ul>
+
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

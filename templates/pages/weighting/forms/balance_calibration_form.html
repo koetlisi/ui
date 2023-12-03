@@ -1,0 +1,81 @@
+<div class="card card-primary" style="height: 700px;overflow: auto">
+        <div class="card-header">
+            <h5 class="m-0 text-center">Balance Calibration Form</h5>
+        </div>
+        <form onsubmit="return false" id="balance_calibration">
+            {% csrf_token %}
+            <div class="card-body">
+                 <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                            <label for="balanceId">Balance ID</label>
+                            <select class="form-control " style="width: 100%;" id="balanceId">
+                                <option value="" selected >Select Balance to calibrate</option>
+                                <option>Balance 1</option>
+                                <option>Balance 2</option>
+                                <option>Balance 3</option>
+                                <option>Balance 4</option>
+                                <option>Balance 5</option>
+                            </select>
+                        </div>
+                    </div>
+                     <div class="col-md-4 ">
+                        <div class="form-group">
+                            <label for="setid">Weight Set</label>
+                            <select class="form-control" style="width: 100%;" id="setId">
+                                <option value=""  selected>Select weight set to use..</option>
+                                <option >set 1</option>
+                                <option >set 2</option>
+                                <option >set 3</option>
+                                <option >set 4</option>
+                                <option >set 5</option>
+                            </select>
+
+
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-2 ">
+                        <div class="form-group">
+                            <label for="originalMass" class="form-label">Originals mass</label>
+                            <input type="number" class="form-control" id="originalMass" name="originalMass"  >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="weightedMass" class="form-label">Weighted Mass (g)</label>
+                            <input type="number" class="form-control" id="weightedMass" name="weightedMass"  >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Record Weight</label>
+                            <button class="form-control  btn btn-success" type="button" id="record" >Record</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 pt-3">
+                        <table class="table table-bordered" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Original Mass</th>
+                                    <th>Weighted Mass</th>
+                                    <th>delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" id="sub" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

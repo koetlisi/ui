@@ -1,0 +1,123 @@
+<div class=" card card-primary " style="height: 800px;overflow: auto">
+    <div class="card-header">
+        <h5 class="m-0 text-center">Weight Set Register Form</h5>
+    </div>
+    <form onsubmit="return false" id="weightset_form">
+        {% csrf_token %}
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="setname">Weight Set  Name</label>
+                        <input type="text" class="form-control" id="setname" placeholder="weight set name">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="material">Material</label>
+                        <input type="text" class="form-control" id="material" placeholder="material">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="manufacture">Manufacture</label>
+                        <input type="text" class="form-control" id="manufacture" placeholder="Manufacture">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="serialnum">Serial Number</label>
+                        <input type="text" class="form-control" id="serial_num" placeholder="Serial Number">
+                    </div>
+                </div>
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="location">Storage Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="location">
+                    </div>
+                 </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="cal_cert">Drag and drop Calibration certificate  here:</label>
+                        <div  class="file-drop-area">
+                            <input type="file" id="cal_cert" class="form-control-file" name="cal_cert">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description" placeholder="Desciption"></textarea>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="mass" class="form-label">Mass of weight (g)</label>
+                        <input type="number" class="form-control" id="mass" name="mass"  >
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="lowerbound" class="form-label">Lower Bound of Weight</label>
+                        <input type="number" class="form-control" id="lowerBound" name="lowerbound">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="upperbound" class="form-label">Upper Bound of Weight</label>
+                        <input type="number" class="form-control" id="upperBound" name="upperbound">
+                    </div>
+                </div>
+                <div class="col-md-2 ">
+                    <div class="form-group">
+                        <label for="units">Weight Units</label>
+                        <select class="form-control " style="width: 100%;" id="units">
+                            <option value="" selected>Select Units</option>
+                              <option>Milligrams</option>
+                            <option>Grams</option>
+                            <option>KG</option>
+                            <option>Tones</option>
+                            <option>other</option>
+                        </select>
+                    </div>
+                </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Add Weight</label>
+                            <button class="form-control  btn btn-success" type="button" id="addWeight" >Add Weight</button>
+                        </div>
+                    </div>
+                </div>
+            <div class="row">
+                <div class="col-md-12 pt-3">
+                        <table class="table table-bordered" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Weight Number</th>
+                                    <th>Mass of Weight</th>
+                                    <th>Lower Bound Weight</th>
+                                    <th>Upper Bound Weight</th>
+                                    <th>delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <div class="row">
+                 <div class="col-md-12">
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </div>
+       </div>
+    </form>
+</div>

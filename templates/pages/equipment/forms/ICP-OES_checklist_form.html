@@ -1,0 +1,53 @@
+<div class="card card-primary" style="height: 700px;overflow: auto">
+<div class="card-header">
+    <h5 class="m-0 text-center">ICP-OES Form</h5>
+</div>
+    <div class="container mt-4">
+        <div class="row">
+            <div class="col-md-8">
+                <form>
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>Header 1</th>
+                                <th>Header 2</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                  <td>Data 1</td>
+                                  <td>Data 2</td>
+                              <!-- ... more data ... -->
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form class="" onsubmit="return false" id="icp-oes_form">
+                    <div class="form-group">
+                        <label for="nebuliser">Nebuliser Back Pressure</label>
+                        <input type="text" class="form-control" id="nebuliser" placeholder="Enter nebuliser pressure">
+                    </div>
+                    <div class="form-group">
+                        <label for="argon">Argon Pressure</label>
+                        <input type="text" class="form-control" id="argon" placeholder="Enter Argon Pressure">
+                    </div>
+                        <div class="form-group">
+                            <label for="flowrate">Pump Flow Rate</label>
+                            <input type="text" class="form-control" id="flowrate" placeholder="Enter Flow Rate">
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label" for="tubing">
+                        <input class="form-check-input" type="checkbox" value="" id="tubing">
+                            Tubing Changed
+                        </label>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>
+

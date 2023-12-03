@@ -1,0 +1,73 @@
+<div class="card card-primary" style="height: 530px;overflow: auto">
+        <div class="card-header">
+            <h5 class="m-0 text-center">Certified Reference Material Registration Form </h5>
+        </div>
+        <form onsubmit="return false" id="crm_register" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="expiry_date">Expiry date</label>
+                            <input type="date" class="form-control" id="expiry_date" placeholder="" >
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="lot_number">LOT number</label>
+                            <input type="text" class="form-control" id="lot_number" placeholder="lot number">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="storage_loc">Storage Location</label>
+                            <input type="text" class="form-control" id="storage_loc" placeholder="storage location">
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="concentration">concentration</label>
+                            <input type="text" step="any" class="form-control" id="concentration" placeholder="Concentration">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nist_number">Nist number</label>
+                            <input type="number"  class="form-control" id="nist_number" placeholder="Nist number">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="msds_files">Drag and drop MSDS here:</label>
+                            <div class="file-drop-area">
+                                <input type="file" id="msds_files" class="form-control-file" name="fileInput">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="coa_files">Drag and drop COA here:</label>
+                            <div class="file-drop-area">
+                                <input type="file" id="coa_files" class="form-control-file" name="coa_files">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" rows="3" placeholder="description..."></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" type="submit">Sent for approval</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

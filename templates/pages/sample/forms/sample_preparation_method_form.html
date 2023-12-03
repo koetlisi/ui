@@ -1,0 +1,38 @@
+<div class="card card-primary" style="height: 530px;overflow: auto">
+        <div class="card-header">
+            <h5 class="m-0 text-center">Sample Preparation Method Register</h5>
+        </div>
+        <form onsubmit="return false" id="samplePrepMethod">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="col">
+                            <div class="form-group">
+                                <label for="name">Preparation Method name</label>
+                                <input type="text" class="form-control" id="name" placeholder="preparation method name">
+                            </div>
+                            <div class="form-group">
+                                <label for="report">Drag and drop report here:</label>
+                                <div  class="file-drop-area">
+                                    <input type="file" id="report" class="form-control-file" name="report">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="description">Description</label>
+                            <textarea class="form-control" id="description" rows="5" placeholder="description"></textarea>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

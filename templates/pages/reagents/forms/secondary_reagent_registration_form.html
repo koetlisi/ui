@@ -1,0 +1,95 @@
+<div class="card card-primary" style="height: 530px;overflow: auto">
+    <div class="card-header">
+        <h5 class="m-0 text-center">Secondary Reagent Registration form</h5>
+    </div>
+    <form onsubmit="return false" id="secondaryreagent" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="name">Reagent Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="reagent name">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="tested_by">Tested by</label>
+                        <input type="text" class="form-control" id="tested_by" placeholder="tested by">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="prepared_by">Prepared by</label>
+                        <input type="text" class="form-control" id="prepared_by" placeholder="prepared by">
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="method" class="form-label">Test Method</label>
+                        <input type="text" class="form-control" id="method" name="method" placeholder="method">
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="storage_loc">Storage Location</label>
+                        <input type="text" class="form-control" id="storage_loc" placeholder="storage location">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="concentration">Concentration</label>
+                        <input type="text" step="any" class="form-control" id="concentration"
+                               placeholder="Concentration">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="precursor">Precursor</label>
+                        <select class="select2" multiple="multiple" id="precursor" data-placeholder="Select a Precursor"
+                                style="width: 100%;">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="preparationdate">Preparation date</label>
+                        <input type="date" step="any" class="form-control" id="preparationdate" placeholder="date">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="expiry">Expiry date</label>
+                        <input type="date" step="any" class="form-control" id="expiry" placeholder="date">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="documentation_files">Drag and drop Documentation here:</label>
+                        <div class="file-drop-area">
+                            <input type="file" id="documentation_files" class="form-control-file"
+                                   name="documentation_files">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" rows="4"
+                                  placeholder="description..."></textarea>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <button class="btn btn-primary btn-block" type="submit">Sent for approval</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

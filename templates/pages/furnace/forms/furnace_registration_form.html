@@ -1,0 +1,145 @@
+<div class="card card-primary" style="height: 700px;overflow: auto">
+        <div class="card-header">
+            <h5 class="m-0 text-center">Furnance Form</h5>
+        </div>
+        <form class="" onsubmit="return false" id="furnaceform">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="job_code">Batch/Job Coder</label>
+                            <input type="text" class="form-control" id="job_code" placeholder="Enter Job Code" >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Find Job</label>
+                            <button class="form-control  btn btn-success" type="button" id="findJobButton" >Find Job</button>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Clear Job filled</label>
+                            <button class="form-control  btn btn-success" type="button" id="clearjobfield" disabled>clear Job</button>
+                        </div>
+                    </div>
+                </div>
+
+                <hr>
+
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                            <label for="furnaceId">Furnace ID</label>
+                            <select class="form-control " style="width: 100%;" id="furnaceId">
+                                <option value="">Choose Furnace</option>
+                                <option value="fur1">furnace 1</option>
+                                <option value="fur2">furnace 2</option>
+                                <option value=fur3>furnace 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                            <label for="thermometerId">Thermometer/Probe/Pyrometer Serial No</label>
+                            <select class="form-control " style="width: 100%;" id="thermometerId">
+                                <option value="">Choose Thermometer</option>
+                                <option value="therm1">thermometer 1</option>
+                                <option value="therm2">thermometer 2</option>
+                                <option value=therm3>thermometer 3</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Furnace Condition Satisfactory</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="furnace-condition" id="furnace-condition-yes" value="yes" disabled>
+                                <label class="form-check-label" for="furnace-condition-yes" >Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="furnace-condition" id="furnace-condition-no" value="no" disabled>
+                                <label class="form-check-label" for="furnace-condition-no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="furnace-temp-loading">Furnace Temp. Loading</label>
+                            <input type="number" class="form-control" id="furnace-temp-loading" placeholder="Furnace Temp. Loading" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Furnace Temp. in Limits</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="furnace-temp-limits" id="furnace-temp-limits-yes" value="yes" disabled>
+                                <label class="form-check-label" for="furnace-temp-limits-yes">Yes</label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="furnace-temp-limits" id="furnace-temp-limits-no" value="no" disabled >
+                                <label class="form-check-label" for="furnace-temp-limits-no">No</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="furnace-temp-unloading">Furnace Temp. Unloading</label>
+                            <input type="number" class="form-control" id="furnace-temp-unloading" placeholder="Furnace Temp. Unloading" disabled>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="action">If No any above, state action taken to rectify</label>
+                            <textarea class="form-control" id="action" rows="1" placeholder="action taken to rectify..." disabled></textarea>
+                        </div>
+                    </div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Start time</label>
+                            <button class="form-control  btn btn-success" type="button" id="start_time" disabled>Start</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="time-loading">Time Loading</label>
+                            <input type="time" class="form-control" id="time-loading" disabled >
+                        </div>
+                    </div>
+                    <div class="col-md-1">
+                        <div class="form-group">
+                            <label>Stop time</label>
+                            <button class="form-control  btn btn-success" type="button" id="stop_time" disabled>Stop</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="form-group">
+                            <label for="time-unloading">Time Unloading</label>
+                            <input type="time" class="form-control" id="time-unloading" disabled>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="total-time">Total Time (minutes)</label>
+                            <input type="number" class="form-control" id="total-time" placeholder="00" disabled>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

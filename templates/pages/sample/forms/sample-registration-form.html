@@ -1,0 +1,134 @@
+<!-- general form elements -->
+<div class="card card-primary" style="height: fit-content;overflow: auto">
+
+<div class="card-body">
+    <!-- Your content goes here -->
+</div>
+
+    <div class="card-header" >
+        <h3 class="card-title">Sample Registration Form</h3>
+    </div>
+    <!-- /.card-header -->
+    <!-- form start -->
+    <form onsubmit="return false" id="sample-registration">
+        <div class="card-body" style="height: fit-content; ">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sample-name">Sample Name</label>
+                        <input type="text" class="form-control" id="sample-name" placeholder="Name of the sample">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sample-type">Sample Type</label>
+                        <select class="form-control select2" style="width: 100%;" id="sample-type">
+                            <option value="routine">Routine</option>
+                            <option selected="selected" value="non_routine">Other</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sample-state">Sample State</label>
+                        <select class="form-control select2" style="width: 100%;" id="sample-state">
+                            <option selected="selected" value="">Sample State</option>
+                            <option value="solid">Solid</option>
+                            <option value="slurry">Slurry</option>
+                            <option value="liquids">Liquid</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="summernote">Sample Description</label>
+                <textarea id="summernote" >
+                    Write <em>sample</em> <u>description</u> <strong>here</strong>
+                  </textarea>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="date-collection">Collection Date</label>
+                        <input type="datetime-local" class="form-control" id="date-collection" placeholder="date-collection">
+                    </div>
+                </div>
+                 <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="turn-around-time">Turn Around Time</label>
+                        <input type="number" class="form-control" id="turn-around-time" placeholder="Turn-Around Time">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="tat">(TAT) SI Units</label>
+                        <select class="form-control select2" style="width: 100%;" id="tat">
+                            <option selected="selected" value="hour(s)">Hours</option>
+                            <option value="day(s)">Days</option>
+                            <option value="week(s)">Weeks</option>
+                            <option value="Month(s)">Months</option>
+                            <option value="year(s)">Years</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="weight">Quantity</label>
+                        <input type="number" class="form-control" id="weight" placeholder="Quantity">
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="units">Quantity SI Units</label>
+                        <select class="form-control select2"  style="width: 100%;" id="units">
+                            <option selected="selected" value="g">Grams(g)</option>
+                            <option value="kg">KiloGrams(kg)</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-9 mb-4">
+                    <label for="weight" id="analytes-table">Table of Analytes</label>
+                    <table class="table table-bordered" id="dataTable">
+                        <thead>
+                            <tr>
+                                <th>Analytes</th>
+                                <th>Units</th>
+                                <th>Analyte/Unit</th>
+                                <th>delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="analyteOptions" class="form-label">Analyte</label>
+                        <select class="select2" id="analyteOptions" data-placeholder="Analytes"
+                                style="width: 100%;">
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label for="sinits" class="form-label">Units</label>
+                        <input type="text" class="form-control" id="sinits"  placeholder="analytes" >
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <div class="form-group">
+                        <label>Add</label>
+                        <button class="form-control  btn btn-success" type="button" id="addAnalytesButton">Add Analyte</button>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+            <button type="submit" class="btn btn-primary" style="width: 100%">Submit</button>
+        </div>
+        </div>
+    </form>
+</div>
+<!-- /.card -->

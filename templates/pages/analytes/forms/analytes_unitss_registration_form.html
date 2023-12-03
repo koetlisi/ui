@@ -1,0 +1,29 @@
+<div class="card card-primary" style="height: 530px;overflow: auto">
+        <div class="card-header">
+            <h5 class="m-0 text-center">Analytes Units Form</h5>
+        </div>
+        <form class="" onsubmit="return false" id="AnalyteUnitsForm">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="full_name">Full Name of Unit of Measure </label>
+                            <input type="text" class="form-control" id="full_name" placeholder="full Name">
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="short_form">Short Form of Unit of Measure</label>
+                            <input type="text" class="form-control" id="short_form" placeholder="Short form">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
