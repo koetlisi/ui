@@ -37,7 +37,7 @@ def analytes_register(request):
 
 
 def analyte_units_register(request):
-    return view_function(request, "pages/analytes/analyte_units_register.html")
+    return view_function(request, "pages/sample/forms/analyte_units_register.html")
 
 
 def primary_reagent(request):
@@ -91,3 +91,30 @@ def thermometer_register(request):
 def manual_dilution(request):
     return view_function(request, "pages/dilution/manual_dilution.html")
 
+
+def auto_dilution(request):
+    return view_function(request, "pages/dilution/auto_dilution.html")
+
+def glassware_register(request):
+    return view_function(request, "pages/equipment/glassware_register.html")
+
+def auto_dispenser_register(request):
+    return view_function(request, "pages/equipment/auto_dispenser_register.html")
+
+def hotplate_form(request):
+    return view_function(request, "pages/hotplate/hotplate_form.html")
+
+def storage_register(request):
+    return view_function(request, "pages/storage/storage_register.html")
+
+def lab_register(request):
+    return view_function(request, "pages/labs_offices/lab_register.html")
+
+def office_register(request):
+    return view_function(request, "pages/labs_offices/office_register.html")
+
+def permissions_register(request):
+    return view_function(request, "pages/permissions_roles/permissions_register.html")
+
+def roles_register(request):
+    return view_function(request, "pages/permissions_roles/roles_register.html")

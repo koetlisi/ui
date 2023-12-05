@@ -11,4 +11,4 @@ from ...settings.globals import my_api
 class AnalyteUnitsRegistrationAPI(APIView):
     @staticmethod
     def post(request):
-        return boot(request, '/api/analyte/registration', request.data)
+        return boot(request, '/api/analyte/unit/registration', request.data)

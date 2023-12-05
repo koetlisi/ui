@@ -1,0 +1,123 @@
+<div class="card card-primary" style="height: 700px;overflow: auto">
+    <div class="card-header">
+        <h5 class="m-0 text-center">glassware Registration Form</h5>
+    </div>
+    <form class="" onsubmit="return false" id="glasswareform">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="glassName">Glassware Name</label>
+                        <input type="text" class="form-control" id="glassName" placeholder="Glassware Name" >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="serialNumber">The Serial Number</label>
+                        <input type="text" class="form-control" id="serialNumber" placeholder="Enter serial number of thermometer" >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2 ">
+                    <div class="form-group">
+                        <label for="glassType">Glassware Type</label>
+                        <select class="form-control " style="width: 100%;" id="glassType">
+                            <option value="" selected >Select type</option>
+                            <option>Beaker</option>
+                            <option>flask</option>
+                            <option>Test tube</option>
+                            <option>pippete</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="maxVol">Glassware Volume</label>
+                        <input type="number" class="form-control" id="maxVol" placeholder="Enter maximum Volume" >
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="volAccuracy">Glassware Accuracy (±)</label>
+                        <input type="number" class="form-control" id="volAccuracy" placeholder="Enter accuracy temperature" >
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="location">Location</label>
+                        <input type="text" class="form-control" id="location" placeholder="Enter lab for balance" >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="purchasedate">Date of purchase</label>
+                        <input type="date" class="form-control" id="purchasedate" placeholder="" >
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="commissiondate">Date of commission</label>
+                        <input type="date" class="form-control" id="commissionDate" placeholder="" >
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="form-group">
+                        <label for="calibrationInterval">Calibration Interval</label>
+                        <input type="number" class="form-control" id="interval" placeholder="" >
+                    </div>
+                </div>
+                <div class="col-md-2 ">
+                    <div class="form-group">
+                        <label for="Calunits">Units</label>
+                        <select class="form-control " style="width: 100%;" id="Calunits">
+                            <option value="" selected >Select Units</option>
+                            <option>hourly</option>
+                            <option>daily</option>
+                            <option>weekly</option>
+                            <option>monthly</option>
+                            <option>before every use</option>
+                        </select>
+                    </div>
+                </div>
+                 <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="supplier">Supplier</label>
+                        <input type="text" class="form-control" id="supplier" placeholder="Enter suppliers name" >
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description" placeholder="Enter lab for balance"></textarea>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="usermanual">Drag and drop User Manual  here:</label>
+                        <div  class="file-drop-area">
+                            <input type="file" id="usermanual" class="form-control-file" name="usermanual">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="calibrationDoc">Drag and drop calibration Certificate  here:</label>
+                        <div  class="file-drop-area">
+                            <input type="file" id="calibrationDoc" class="form-control-file" name="calibrationDOc">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

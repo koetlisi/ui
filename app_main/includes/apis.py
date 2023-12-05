@@ -4,6 +4,8 @@ from django.views.generic import RedirectView
 from ..app_api.analysis.analysis_registration_api import AnalysisRegistrationAPI
 from ..app_api.analyte.analytes_units import AnalyteUnitsRegistrationAPI
 from ..app_api.analyte.analytica_method_registration import AnalyticMethodRegistrationAPI
+from ..app_api.analyte.analytical_method_name_id import GetAnalyticalMethodNameId
+from ..app_api.analyte.get_analyte_unit_name import AnalyteUnitNameAPI
 from ..app_api.equipment.balance_registration import BalanceReagentRegistrationAPI
 from ..app_api.login_api import LoginApi
 from ..app_api.logout import Logout
@@ -11,6 +13,7 @@ from ..app_api.reagents.crm_reagent_registration import CrmReagentRegistrationAP
 from ..app_api.reagents.primary_reagents_registration import PrimaryReagentRegistrationAPI
 from ..app_api.reagents.secondary_reagent_precursor import SecondaryReagentPrecursorAPI
 from ..app_api.reagents.secondary_reagent_registration import SecondaryReagentRegistrationAPI
+from ..app_api.sample.get_sample_prep_name_id import GetSamplePrepNameIdAPI
 from ..app_api.sample.option_select_analytes import OptionSelectAnalytes
 from ..app_api.sample.sample_preparation_method_registration import SamplePreparationMethodRegistrationAPI
 from ..app_api.sample.sample_registration import SampleRegistrationAPI
@@ -25,6 +28,7 @@ urlpatterns = [
     # sample registration
     path("sample-registration/", SampleRegistrationAPI.as_view()),
     path("optionsSelectAnalyte/", OptionSelectAnalytes.as_view()),
+    path("get-sample-prep-method-name-id/", GetSamplePrepNameIdAPI.as_view()),
     path("sample-preparation-method-registration/", SamplePreparationMethodRegistrationAPI.as_view()),
 
     # analyte register
@@ -33,6 +37,8 @@ urlpatterns = [
 
     # analyte unite registration
     path("analyte-unit-registration/", AnalyteUnitsRegistrationAPI.as_view()),
+    path('analyte-unit-name/', AnalyteUnitNameAPI.as_view()),
+    path("get-analytical-method-name-id/", GetAnalyticalMethodNameId.as_view()),
 
     # primary reagent registration
     path("primary-reagent-registration/", PrimaryReagentRegistrationAPI.as_view()),

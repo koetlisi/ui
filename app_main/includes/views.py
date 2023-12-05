@@ -69,4 +69,31 @@ urlpatterns = [
     #manual dilution
     path("manual_dilution/", views.manual_dilution, name="manual_dilution"),
 
+    #auto dilution
+    path("auto_dilution/", views.auto_dilution, name="auto_dilution"),
+
+    # glassware register
+    path("glassware_register/", views.glassware_register, name="glassware_register"),
+
+    # auto dispenser register
+    path("auto_dispenser_register/", views.auto_dispenser_register, name="auto_dispenser_register"),
+
+    # Hotplate Form
+    path("hotplate_form/", views.hotplate_form, name="hotplate_form"),
+
+    # storage register
+    path("storage_register/", views.storage_register, name="storage_register"),
+
+    # lab register
+    path("lab_register/", views.lab_register, name="lab_register"),
+
+    # office register
+    path("office_register/", views.office_register, name="office_register"),
+
+    # permissions register
+    path("permissions_register/", views.permissions_register, name="permissions_register"),
+
+    # Roles register
+    path("roles_register/", views.roles_register, name="roles_register"),
+
 ]

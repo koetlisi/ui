@@ -1,0 +1,87 @@
+<div class=" card card-primary " style="height: 800px;overflow: auto">
+    <div class="card-header">
+        <h5 class="m-0 text-center">Permissions Register Form</h5>
+    </div>
+    <form onsubmit="return false" id="permissions_register">
+        {%csrf_token%}
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="permissions_name">Permission Name</label>
+                        <input type="text" class="form-control" id="permission_name" placeholder="roles name">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description" placeholder="description"></textarea>
+                    </div>
+                </div>
+                 <div class="col-md-2">
+                     <label for="permission">Add Permission</label>
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="table-responsive">
+                  <table class="table table-striped table-hover table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">User Name</th>
+                        <th scope="col">Lab</th>
+                        <th scope="col">Permission Level</th>
+                        <th scope="col">Access Scope</th>
+                        <th scope="col">Actions</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>Analytical Chemistry</td>
+                        <td>Lab Manager</td>
+                        <td>Full access</td>
+                        <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>Microbiology</td>
+                        <td>Analyst</td>
+                        <td>Read/Write to assigned samples</td>
+                        <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>3</td>
+                        <td>David Brown</td>
+                        <td>Molecular Biology</td>
+                        <td>Tester</td>
+                        <td>Read-only access to results</td>
+                        <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Sarah Lee</td>
+                        <td>Histology</td>
+                        <td>Guest</td>
+                        <td>Limited access to reports</td>
+                        <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Emily Jones</td>
+                        <td>Environmental Testing</td>
+                        <td>Admin</td>
+                        <td>System-wide access</td>
+                        <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

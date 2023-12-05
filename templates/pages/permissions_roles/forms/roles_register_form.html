@@ -1,0 +1,80 @@
+<div class=" card card-primary " style="height: 800px;overflow: auto">
+    <div class="card-header">
+        <h5 class="m-0 text-center">Roles Register Form</h5>
+    </div>
+    <form onsubmit="return false" id="roles_register">
+        {%csrf_token%}
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="roles_name">Roles Name</label>
+                        <input type="text" class="form-control" id="roles_name" placeholder="roles name">
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea type="text" class="form-control" id="description" placeholder="description"></textarea>
+                    </div>
+                </div>
+                 <div class="col-md-2">
+                     <label >Add Role</label>
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </div>
+            <hr>
+            <div class="table-responsive">
+              <table class="table table-striped table-hover table-bordered">
+                <thead>
+                  <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Role Name</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Assigned Permissions</th>
+                    <th scope="col">Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>Lab Manager</td>
+                    <td>Full access to lab data, manage users, assign permissions</td>
+                    <td><a href="#">View permissions</a></td>
+                    <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Analyst</td>
+                    <td>Perform tests, analyze samples, submit results</td>
+                    <td><a href="#">View permissions</a></td>
+                    <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Tester</td>
+                    <td>Run specific tests, record data, report results</td>
+                    <td><a href="#">View permissions</a></td>
+                    <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Guest</td>
+                    <td>Limited access to reports, view specific data</td>
+                    <td><a href="#">View permissions</a></td>
+                    <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>LIMS Admin</td>
+                    <td>System-wide administration, manage roles, users, permissions</td>
+                    <td><a href="#">View permissions</a></td>
+                    <td><a href="#">Edit</a> &nbsp; <a href="#">Delete</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+        </div>
+    </form>
+</div>

@@ -1,0 +1,101 @@
+<div class="card card-primary" style="height: 530px;overflow: auto">
+        <form onsubmit="return false" id=auto_dilution>
+            <nav class="main-header navbar navbar-expand-md navbar-light navbar-white">
+                <div class="container">
+                    <div class="collapse navbar-collapse order-3" id="navbarCollapse">
+                        <div class="form-inline ml-0 ml-md-3">
+                            <div class="input-group input-group-sm">
+                                <input id="job_code" class="form-control form-control-navbar" type="search"
+                                       placeholder="Search Job/Batch"
+                                       aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-navbar" id="findJobButton">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul class="order-1 order-md-3 navbar-nav navbar-no-expand ml-auto">
+                        <!-- Messages Dropdown Menu -->
+                        <li class="nav-item ">
+                            <button class="nav-link btn">
+                                <i class="fa fa-trash-o" aria-hidden="true"></i>
+                            </button>
+                        </li>
+                        <!-- Notifications Dropdown Menu -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link" data-toggle="dropdown" href="#">
+                                <i class="far fa-bell"></i>
+                                <span class="badge badge-warning navbar-badge">15</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4 ">
+                        <div class="form-group">
+                            <label for="dispenserid">Auto Dispenser ID</label>
+                            <select class="form-control " style="width: 100%;" id="dispenserid">
+                                <option value=""></option>
+                                <option value="Disp1">Dispenser 1</option>
+                                <option value="Disp2">Dispenser 2</option>
+                                <option value="Disp3">Dispenser 3</option>
+                                <option value="Disp4">Dispenser 4</option>
+                                <option value="other">Dispenser 5</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-2 ">
+                        <div class="form-group">
+                            <label for="sampleId" class="form-label">Sample ID</label>
+                            <input type="text" class="form-control" id="sampleId" name="sampleId" disabled >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="aliqout" class="form-label">Aliquot (ml)</label>
+                            <input type="number" class="form-control" id="aliqout" name="aliqout" disabled >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label for="finalVol" class="form-label">Final Volume (ml)</label>
+                            <input type="number" class="form-control" id="finalVol" name="finalVol" disabled >
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="form-group">
+                            <label>Add Sample</label>
+                            <button class="form-control  btn btn-success" type="button" id="addSampleVolume" disabled>Add Sample</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 pt-3">
+                        <table class="table table-bordered" id="dataTable">
+                            <thead>
+                                <tr>
+                                    <th>Sample ID</th>
+                                    <th>Aliquot (ml)</th>
+                                    <th> Final Volume(ml)</th>
+                                    <th>delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" id="sub" type="submit"  >Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>

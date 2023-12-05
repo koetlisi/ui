@@ -182,15 +182,16 @@ $(document).ready(function () {
             const action = $('#action');
             const totalTime = $('#total-time');
 
-
+            const formdata = new FormData();
             let status = true;
-
 
             if (jobcode.val() === "") {
                 jobcode.addClass('is-invalid');
                 status = false;
             } else {
                 jobcode.removeClass('is-invalid');
+                formdata.append('jobcode', jobcode.val());
+
             }
 
             if (thermometerid.val() === "") {
@@ -198,6 +199,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 thermometerid.removeClass('is-invalid');
+                formdata.append('thermometerid',thermometerid.val());
             }
 
             if (furnaceid.val() === "") {
@@ -205,6 +207,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 furnaceid.removeClass('is-invalid');
+                formdata.append('furnaceid', furnaceid.val());
             }
 
             if (furnaceTempLoading.val() === "") {
@@ -212,6 +215,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 furnaceTempLoading.removeClass('is-invalid');
+                formdata.append( 'furnanceTempLoading',furnaceTempLoading.val());
             }
 
             if (timeLoading.val() === "") {
@@ -219,7 +223,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 timeLoading.removeClass('is-invalid');
-            }
+                formdata.append('timeLoading', timeLoading.val());            }
 
 
 
@@ -228,6 +232,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 furnaceTempUnloading.removeClass('is-invalid');
+                formdata.append('furnaceTempUnloading', furnaceTempUnloading.val());
             }
 
             if (timeUnloading.val() === "") {
@@ -235,6 +240,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 timeUnloading.removeClass('is-invalid');
+                formdata.append('timeUnloading', timeUnloading.val());
             }
 
             if (totalTime.val() === "") {
@@ -242,6 +248,7 @@ $(document).ready(function () {
                 status = false;
             } else {
                 totalTime.removeClass('is-invalid');
+                formdata.append('totalTime', totalTime.val());
             }
 
             if (!(furnaceTempLimitsYes.prop('checked') && furnaceConditionYes.prop('checked')  )) {
@@ -249,10 +256,22 @@ $(document).ready(function () {
                 status = false;
             } else {
                 action.removeClass('is-invalid');
-            }
+                formdata.append('action', action.val());            }
 
             if (status) {
-                alert("Form is valid");
+                $.ajax({
+                    url: '/#/',
+                    type: 'POST',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    headers: {'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()},
+                    success: function (data) {
+                        if (data.code === 201) {
+                            alert(data.data)
+                        }
+                    }
+                })
             }
 
             return false;

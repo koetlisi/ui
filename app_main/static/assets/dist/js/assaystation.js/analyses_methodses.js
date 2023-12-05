@@ -1,7 +1,12 @@
 $(document).ready(function () {
     const currentPath = window.location.pathname;
     if (currentPath.includes('analyses_methods')) {
-
+        const sample_prep_methods = $("#sample_prep_methods");
+        const analytics = $("#analytics");
+        const analytes = $("#analytes");
+        select(analytes,'/optionsSelectAnalyte/');
+        select(sample_prep_methods,'/get-sample-prep-method-name-id/');
+        select(analytics,'/get-analytical-method-name-id/');
         $("form#analysesmethod").on('submit', function () {
                 const name = $("#analyses_name");
                 const description = $("#description");
@@ -18,13 +23,9 @@ $(document).ready(function () {
                     status = false;
                 } else {
                     for (let i = 0; i < samplePrepMethods.selectedOptions.length; i++) {
-                        const option = samplePrepMethods.options[i];
+                        const option = samplePrepMethods.selectedOptions[i];
                         // Check if the option is selected
-                        if (option.selected) {
-                            alert(option.value)
-                            // Push the selected value into the array
-                            samplePrep.push(option.value);
-                        }
+                        samplePrep.push(option.value);
                     }
                     status = true
                 }
@@ -33,12 +34,8 @@ $(document).ready(function () {
                     status = false;
                 } else {
                     for (let i = 0; i < SelectedAnalytes.selectedOptions.length; i++) {
-                        const option = SelectedAnalytes.options[i];
-                        // Check if the option is selected
-                        if (option.selected) {
-                            // Push the selected value into the array
-                            analyticalMethod.push(option.value);
-                        }
+                        const option = SelectedAnalytes.selectedOptions[i];
+                        analyticalMethod.push(option.value);
                     }
                     status = true
                 }
@@ -46,13 +43,10 @@ $(document).ready(function () {
                     toastr.info('Please select some analytes')
                     status = false;
                 } else {
-                    for (let i = 0; i < analyticMethods.options.length; i++) {
-                        const option = analyticMethods.options[i];
+                    for (let i = 0; i < analyticMethods.selectedOptions.length; i++) {
+                        const option = analyticMethods.selectedOptions[i];
                         // Check if the option is selected
-                        if (option.selected) {
-                            // Push the selected value into the array
-                            analytes.push(option.value);
-                        }
+                        analytes.push(option.value);
                     }
                     status = true
                 }
@@ -92,7 +86,9 @@ $(document).ready(function () {
                         headers: {'X-CSRFToken': $('input[name="csrfmiddlewaretoken"]').val()},
                         success: function (data) {
                             if (data.code === 201) {
-                                alert(data.data)
+                                alert(3)
+                            }else{
+                                alert(2)
                             }
                         }
                     })
@@ -100,5 +96,32 @@ $(document).ready(function () {
             }
         )
     }
+
+    function select(element, api) {
+
+            fetch(api,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': $('input[name="csrfmiddlewaretoken"]').val()
+            }
+        }).then(function(response) {
+            if(!response.ok){
+                throw Error(response.statusText);
+            }
+            return response.json();
+        }).then(function(data) {
+            data.data.forEach(analytes =>{
+                element.append('<option value="' + analytes.id + '">' + analytes.name + '</option>');
+            });
+            element.select2({
+                placeholder: 'Analytes',
+                width: '100%'
+            });
+        }).catch(error =>{
+            alert(error.message);
+            console.log(error);
+        });
+        }
 })
 

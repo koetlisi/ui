@@ -1,0 +1,98 @@
+<div class=" card card-primary " style="height: 900px;overflow: auto">
+    <div class="card-header">
+        <h5 class="m-0 text-center">Storage Register Form</h5>
+    </div>
+    <form onsubmit="return false" id="storage_register">
+        {%csrf_token%}
+        <div class="card-body">
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="analytes_name">Storage Name</label>
+                        <input type="text" class="form-control" id="storage_name" placeholder="analytes name">
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="form-group">
+                        <label for="storagetype">Storage Type</label>
+                        <select class="form-control " style="width: 100%;" id="storagetype">
+                            <option value="" selected>Choose Furnace</option>
+                            <option>Fridge Storage</option>
+                            <option>Dry Storage</option>
+                            <option>Racks/Shelves</option>
+                            <option>Cabinet Storage</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="form-group">
+                        <label for="labid">Lab Assigned to</label>
+                        <input type="text" class="form-control" id="labid" placeholder="Lab id">
+                    </div>
+                </div>
+                 <div class="col-md-2">
+                     <label for="chemical_name">Add Analytes</label>
+                    <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="m-0">Top Analytes</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Analyte A
+                                <span class="badge badge-primary badge-pill">25</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Analyte B
+                                <span class="badge badge-primary badge-pill">20</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Analyte C
+                                <span class="badge badge-primary badge-pill">18</span>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
+                <div class="container mt-5">
+                    <h2>Storage Fridge</h2>
+                    <table class="table table-bordered">
+                        <thSead>
+                            <tr>
+                                <th>Compartment</th>
+                                <th>Contents</th>
+                            </tr>
+                        </thSead>
+                        <tbody>
+                            <tr>
+                                <td>Upper Shelf</td>
+                                <td>Reagents</td>
+                            </tr>
+                            <tr>
+                                <td>Middle Shelf</td>
+                                <td>Biological Samples</td>
+                            </tr>
+                            <tr>
+                                <td>Lower Shelf</td>
+                                <td>Chemicals</td>
+                            </tr>
+                            <tr>
+                                <td>Drawer 1</td>
+                                <td>Glassware</td>
+                            </tr>
+                            <tr>
+                            <td>Drawer 2</td>
+                                <td>Microscope Slides</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>

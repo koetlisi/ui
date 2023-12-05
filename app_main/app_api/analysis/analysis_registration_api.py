@@ -13,13 +13,20 @@ from ...settings.globals import my_api
 class AnalysisRegistrationAPI(APIView):
     @staticmethod
     def post(request):
-        incoming_json = request.body.decode('utf-8')
-        json_data = json.loads(incoming_json)
+        token = request.COOKIES.get('laravel_token')
         data = {
             'description': request.data.get('description'),
             'name': request.data.get('name'),
-            'analytes_id': json_data.get('analytes_id', []),
-            'analytical_method_id': json_data.get('analytical_method_id', []),
-            'sam_prep_method_id': json_data.get('sam_prep_method_id', []),
+            'analytical_method_id': request.POST.getlist('analytes_id[]'),
+            'analytes_id': request.POST.getlist('analytical_method_id[]'),
+            'sam_prep_method_id': request.POST.getlist('sam_prep_method_id[]'),
         }
-        return boot(request, '/api/analyses/registration', data)
+        try:
+            api_response = requests.post(my_api + '/api/analyses/registration', json=data,
+                                         headers=headers(token))
+            api_response.raise_for_status()
+            return Response(api_response.json(), status=status.HTTP_200_OK)
+        except requests.exceptions.HTTPError as err:
+            print(err.response.text)
+            return Response(err.response.text, status=status.HTTP_500_INTERNAL_SERVER_ERROR)
+        #return boot(request, '/api/analyses/registration', data)

@@ -172,5 +172,425 @@
             myModal.show();
         });
     </script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Your JSON data
+        const data = [
+    {
+        "sample_name": "1",
+        "data": []
+    },
+    {
+        "sample_name": "ARCPGM_062023",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "AMIS0463",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU"
+            }
+        }
+    },
+    {
+        "sample_name": "AMIS0463",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "AMIS0463",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "DAM3B_I",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "DAM3B_N_0722",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "DAM3B_N_1222",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "DM3B_I",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "FIC2014_N",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "FICO_I",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "FICO_I",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "MCEFF_N",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "NCM_I",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "NCM_I_0223",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "NCM_I_0922",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "NCMBM_I_0523",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "NCMQC15",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "PVL_I",
+        "data": []
+    },
+    {
+        "sample_name": "PVLBM_I",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "PVLBM_N_0822",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "SLC_I",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "SLCNQC17",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "4": "NI",
+                "5": "CA"
+            }
+        }
+    },
+    {
+        "sample_name": "SLCNQC20",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "WCM_IQC",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "WCMBM_I_0523",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    },
+    {
+        "sample_name": "WCMPGM_I_0523",
+        "data": {
+            "analysis_name": "PGM Determination",
+            "related_analytes": {
+                "0": "AU",
+                "1": "IR",
+                "2": "PD",
+                "3": "RH",
+                "4": "RU",
+                "5": "PT"
+            }
+        }
+    },
+    {
+        "sample_name": "WCMQC2020",
+        "data": {
+            "analysis_name": "BM Determination",
+            "related_analytes": {
+                "0": "CO",
+                "2": "CU",
+                "3": "FE",
+                "4": "NI"
+            }
+        }
+    }
+];
+
+        function createAnalysisTreeView(data, parent) {
+            const groupedData = {};
+            data.forEach(item => {
+                const analysisName = item.data.analysis_name;
+                if (!groupedData[analysisName]) {
+                    groupedData[analysisName] = [];
+                }
+                groupedData[analysisName].push(item);
+            });
+
+            for (const analysisName in groupedData) {
+                const analysisItem = document.createElement('li');
+                analysisItem.classList.add('nav-item');
+
+                const link = document.createElement('a');
+                link.classList.add('nav-link');
+                link.textContent = analysisName;
+                analysisItem.appendChild(link);
+
+                const ul = document.createElement('ul');
+                ul.classList.add('nav', 'flex-column', 'ml-3');
+                ul.style.display = 'none';
+
+                const analysisData = groupedData[analysisName];
+                analysisData.forEach(item => {
+                    const sampleItem = document.createElement('li');
+                    sampleItem.classList.add('nav-item');
+
+                    const sampleLink = document.createElement('a');
+                    sampleLink.classList.add('nav-link');
+                    sampleLink.textContent = item.sample_name;
+                    sampleItem.appendChild(sampleLink);
+
+                    const analyteUl = document.createElement('ul');
+                    analyteUl.classList.add('nav', 'flex-column', 'ml-3');
+                    analyteUl.style.display = 'none';
+
+                    if (item.data.related_analytes) {
+                        for (const key in item.data.related_analytes) {
+                            const analyteItem = document.createElement('li');
+                            analyteItem.classList.add('nav-item');
+                            analyteItem.textContent = item.data.related_analytes[key];
+                            analyteUl.appendChild(analyteItem);
+                        }
+                    }
+
+                    sampleLink.addEventListener('click', () => {
+                        analyteUl.style.display = analyteUl.style.display === 'none' ? 'block' : 'none';
+                    });
+
+                    sampleItem.appendChild(analyteUl);
+                    ul.appendChild(sampleItem);
+                });
+
+                analysisItem.appendChild(ul);
+
+                link.addEventListener('click', () => {
+                    ul.style.display = ul.style.display === 'none' ? 'block' : 'none';
+                });
+
+                parent.appendChild(analysisItem);
+            }
+        }
+        // Fetch the treeview element and create the tree view structure
+        const treeview = document.getElementById('treeview');
+        if (treeview) {
+            createAnalysisTreeView(data, treeview);
+        }
+    </script>
 </body>
 </html>

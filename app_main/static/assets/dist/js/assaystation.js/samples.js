@@ -2,31 +2,11 @@ $(document).ready(function() {
     const currentPath = window.location.pathname;
     if (currentPath.includes('register-sample')) {
         const selectElement = $('#analyteOptions');
-        fetch('/optionsSelectAnalyte/',{
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-Token': $('input[name="csrfmiddlewaretoken"]').val()
-            }
-        }).then(function(response) {
-            if(!response.ok){
-                throw Error(response.statusText);
-            }
-            return response.json();
-        }).then(function(data) {
-            data.data.forEach(analytes =>{
-                selectElement.append('<option value="' + analytes.id + '">' + analytes.name + '</option>');
-            });
-            selectElement.select2({
-                placeholder: 'Analytes',
-                width: '100%'
-            });
-        }).catch(error =>{
-            alert(error.message);
-            console.log(error);
-        });
+        const selectUnits = $("#sinits");
+        select(selectUnits,'/analyte-unit-name/');
+        select(selectElement,'/optionsSelectAnalyte/');
         $("#addAnalytesButton").on("click",function (){
-            const analytes = $("#analytes");
+            const analytes = $("#analyteOptions");
             const units = $("#sinits");
             let status = true;
             if(analytes.val() === ""){
@@ -157,4 +137,29 @@ $(document).ready(function() {
         });
 
     }
+    function select(element, api) {
+            fetch(api,{
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-CSRF-Token': $('input[name="csrfmiddlewaretoken"]').val()
+            }
+        }).then(function(response) {
+            if(!response.ok){
+                throw Error(response.statusText);
+            }
+            return response.json();
+        }).then(function(data) {
+            data.data.forEach(analytes =>{
+                element.append('<option value="' + analytes.name + '">' + analytes.name + '</option>');
+            });
+            element.select2({
+                placeholder: 'Analytes',
+                width: '100%'
+            });
+        }).catch(error =>{
+            alert(error.message);
+            console.log(error);
+        });
+        }
 })

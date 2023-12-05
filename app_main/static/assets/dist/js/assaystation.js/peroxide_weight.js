@@ -52,57 +52,34 @@ $(document).ready(function () {
             let massnum = true;
             let numpero = true;
 
-
-
             if (balanceId.val() === "") {
                 balanceId.addClass('is-invalid');
                 status = false;
             } else {
                 balanceId.removeClass('is-invalid');
-                status = true;
             }
 
-            if (mass.val() === "") {
-                mass.addClass('is-invalid');
-                status = false;
-            } else {
-                mass.removeClass('is-invalid');
-                status = true;
-            }
+
 
             if (!isNaN(parseFloat(mass.val())) && mass.val() !== "") {
                 mass.removeClass('is-invalid');
-                massnum = true;
             } else {
                 mass.addClass('is-invalid');
                 massnum = false;
             }
 
-
             if (!isNaN(parseFloat(peroxidemass.val())) && peroxidemass.val() !== "") {
                 peroxidemass.removeClass('is-invalid');
-                numpero = true;
             } else {
                 peroxidemass.addClass('is-invalid');
                 numpero = false;
             }
-
-
-            if (peroxidemass.val() === "") {
-                peroxidemass.addClass('is-invalid');
-                status = false;
-            } else {
-                peroxidemass.removeClass('is-invalid');
-                status = true;
-            }
-
 
             if (sampleId.val() === "") {
                 sampleId.addClass('is-invalid');
                 status = false;
             } else {
                 sampleId.removeClass('is-invalid');
-                status = true;
             }
             if (status && massnum && numpero) {
                 const newRow = '<tr><td>' + sampleId.val() + '</td><td>' + mass.val() + '</td><td>' + peroxidemass.val() + '</td><td><button class="deleteRowBtn btn btn-danger" style="width: 100%">Delete</button></td></tr>';
@@ -132,6 +109,8 @@ $(document).ready(function () {
                 dataArray.push({ sampleId: sampleIdValue, mass: massValue, peroxidemass: peroxidemassValue });
             });
 
+
+
             // Capture other form fields
             const jobCode = $("#job_code");
             const balanceId = $("#balanceId");
@@ -144,7 +123,21 @@ $(document).ready(function () {
                 '\nEnd Time: ' + end.val() +
                 '\nJob ID: ' + start.val() +
                 '\nSample Data: ' + JSON.stringify(dataArray));
-    });
+            const xhr = new XMLHttpRequest();
+                xhr.open('POST', '/#/', true);
+                const csrfToken = $('input[name="csrfmiddlewaretoken"]').val();
+                xhr.setRequestHeader('X-CSRF-Token', csrfToken);
+                xhr.onreadystatechange = () => {
+                    if (xhr.readyState === XMLHttpRequest.DONE) {
+                        if (xhr.status === 200) {
+                            alert(xhr.responseText);
+                        } else {
+                            alert(xhr.responseText);
+                        }
+                    }
+                };
+                xhr.send(formData);
+        });
 
     }
 })

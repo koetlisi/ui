@@ -1,0 +1,115 @@
+<div class="content" style="padding-top: 1%">
+
+    </div>
+    <div class="card card-primary" style="height: 300px; overflow: auto">
+        <div class="card-header">
+            <h5 class="m-0 text-center">Lab Registration Form</h5>
+        </div>
+        <form onsubmit="return false" id="labRegistrationForm">
+            {% csrf_token %}
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="lab_name">Lab Name</label>
+                            <input type="text" class="form-control" id="lab_name" placeholder="lab name">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="location">Location</label>
+                            <input type="text" class="form-control" id="location" placeholder="location of lab...">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="contacts">Contacts</label>
+                            <input type="text" class="form-control" id="contacts" placeholder="contacts">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="form-group">
+                            <label for="url">URL</label>
+                            <input type="text" class="form-control" id="url" placeholder="url">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="logo">Drag and drop logo here:</label>
+                            <div class="file-drop-area">
+                                <input type="file" id="logo" class="form-control-file" name="logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <button class="btn btn-primary btn-block" type="submit">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+            <hr>
+            <div class="row">
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="m-0">Top Analytes</h5>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-group">
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Analyte A
+                                <span class="badge badge-primary badge-pill">25</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Analyte B
+                                <span class="badge badge-primary badge-pill">20</span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between align-items-center">
+                                Analyte C
+                                <span class="badge badge-primary badge-pill">18</span>
+                            </li>
+                        </ul>
+                    </div>
+               </div>
+                <div class="container mt-4">
+                    <h2 class="mb-4">Lab Efficiency Report</h2>
+                        <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Lab</th>
+                                <th>Total Analytes</th>
+                                <th>Processed Analytes</th>
+                                <th>Efficiency</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Lab A</td>
+                                <td>100</td>
+                                <td>80</td>
+                                <td>80%</td>
+                            </tr>
+                            <tr>
+                                <td>Lab B</td>
+                                <td>120</td>
+                                <td>110</td>
+                                <td>91.67%</td>
+                            </tr>
+                            <tr>
+                                <td>Lab C</td>
+                                <td>80</td>
+                                <td>75</td>
+                                <td>93.75%</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </form>
+</div>
